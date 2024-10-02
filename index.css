@@ -1,0 +1,469 @@
+:root {
+    --rosso: #760000;
+    --sfondo: #f2f2f2;
+}
+
+body {
+    margin: 0 8%;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: var(--sfondo);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1000;
+    background-color: var(--sfondo);
+}
+
+.logo img {
+    height: 200px;
+    transition: height 0.3s ease;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    color: var(--rosso);
+}
+
+.language {
+    display: flex;
+}
+
+.language a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.language a:hover {
+    text-decoration: underline;
+}
+
+.cover-container {
+    position: relative;
+    background-image: url('./cover\ image\ pizza.png');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+
+.cover-text {
+    position: relative;
+    z-index: 1;
+    margin: 50px;
+}
+
+.cover-text h1 {
+    margin: 5px;
+    padding: 5px;
+    color:var(--rosso);
+    text-shadow:1px 1px 1px black;
+    font-size: 60px;
+    font-family: "Trajan Pro", "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", serif;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: black;
+    margin: 4px;
+    border-radius: 2px;
+}
+
+.menu-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--sfondo);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.dropdown {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+.dropbtn.active {
+    transform: rotate(180deg);
+}
+
+
+.dropbtn::after {
+    content: '\25BC';
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.dropdown.open .dropbtn::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.dropbtn {
+    width: 100%;
+    background-color: var(--rosso);
+    color: white;
+    padding: 14px;
+    font-size: 18px;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: var(--sfondo);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    max-height: 0;
+    overflow: auto;
+    transition: max-height 0.3s ease-out;
+    border-radius: 5px;
+}
+
+
+.sottotitoli {
+    text-align: center;
+    color: var(--rosso);
+}
+
+/* SCROLLBAR ROSSA DEI MENU*/
+.dropdown-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: var(--rosso);
+}
+
+
+
+
+.menu-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.menu-item .ingredients {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+
+.dropdown.open .dropdown-content {
+    display: block;
+    max-height: 500px;
+}
+
+.extra {
+    margin-top: 50px;
+    background-color: var(--sfondo);
+}
+
+.special-event {
+    background-color: rgb(226, 222, 220);
+    border: 2px solid var(--rosso);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.special-event .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: var(--rosso);
+}
+
+.menu-item.special-event .item-header span:first-child {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.menu-item.special-event .price {
+    background-color: var(--rosso);
+    color: white);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    color: var(--rosso);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    z-index: 1000;
+    border: 1px solid var(--rosso);
+}
+
+.back-to-top:hover {
+    background-color: var(--rosso);
+    color: white;
+}
+
+.footer {
+    margin-top: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--sfondo);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: #333;
+    font-size: 14px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.footer-left {
+    max-width: 60%;
+    background-color: var(--sfondo);
+    color: black;
+}
+
+.footer-left p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-top: 25px;
+
+}
+
+.footer-left a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-left a:hover {
+    text-decoration: underline;
+}
+
+.footer-right {
+    max-width: 30%;
+    text-align: right;
+}
+
+.footer-right .logo {
+    max-width: 100px;
+    height: auto;
+}
+
+.merito {
+    display: flex;
+    background-color: var(--sfondo);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 25px;
+    max-width: 800px;
+    width: 100%;
+    border: none;
+}
+
+
+@media (max-width: 817px) {
+    .navbar {
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        height: 60px;
+        
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--sfondo);
+        box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.3); 
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0;
+
+    }
+
+    
+    .menu-container h1 {
+        font-size: 25px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .language {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .cover-container {
+        height: 250px;
+    }
+
+    .cover-text h1 {
+        margin: 0;
+        font-size: 36px;
+    }
+
+    .back-to-top {
+        position: fixed;
+        right: 1px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .footer-left,
+    .footer-right {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+
+    .merito {
+        background-color: var(--sfondo);
+        max-width: 669px;
+    }
+
+    .back-to-top {
+        opacity: 0.9;
+    }
+
+    .dropdown.open .dropdown-content {
+        display: block;
+        max-height: 1400px;
+        border-radius: 5px;
+    }
+
+
+    .sottotitoli {
+        font-size: large;
+    }
+
+    .dropdown-content p {
+        font-size: small;
+    }
+
+    .dropbtn {
+        font-size: small;
+    }
+
+    .menu-item .item-header {
+        font-size: 14px;
+    }
+
+    .ingredients {
+        font-size: 0px;
+    }
+
+    #antipasti {
+        padding-top: 5px;
+    }
+
+}
